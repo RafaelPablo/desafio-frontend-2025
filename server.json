@@ -1,0 +1,100 @@
+{
+  "transactions": [
+    {
+      "description": "Night out",
+      "value": 200,
+      "type": "outcome",
+      "date": "2023-03-25T10:39:09.291Z",
+      "id": "6"
+    },
+    {
+      "id": "a309",
+      "description": "teste",
+      "value": 99,
+      "type": "outcome",
+      "date": "2025-02-21T16:36:53.203Z"
+    },
+    {
+      "id": "0f21",
+      "description": "teste",
+      "value": 99,
+      "type": "outcome",
+      "date": "2025-02-21T16:39:01.929Z"
+    },
+    {
+      "id": "fa3a",
+      "description": "teste",
+      "value": 25,
+      "type": "saida",
+      "date": "2025-02-21T17:04:15.394Z"
+    },
+    {
+      "id": "01b1",
+      "description": "blah",
+      "value": 200,
+      "type": "entrada",
+      "date": "2025-02-21T17:04:22.587Z"
+    },
+    {
+      "id": "a9fa",
+      "description": "ajuste de contas",
+      "value": 2096,
+      "type": "entrada",
+      "date": "2025-02-21T17:07:34.968Z"
+    },
+    {
+      "id": "243b",
+      "description": "teste",
+      "value": 25,
+      "type": "saida",
+      "date": "2220-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "2b9c",
+      "description": "Mote",
+      "value": 100,
+      "type": "saida",
+      "date": "2025-02-21T00:00:00.000Z"
+    },
+    {
+      "id": "9f75",
+      "description": "mas que coisa",
+      "value": 5,
+      "type": "entrada",
+      "date": "2025-02-21T00:00:00.000Z"
+    },
+    {
+      "id": "d167",
+      "description": "teste",
+      "value": -21,
+      "type": "entrada",
+      "date": "2220-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "b60b",
+      "description": "111",
+      "value": -21,
+      "type": "entrada",
+      "date": "2230-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "c055",
+      "description": "2",
+      "value": -15,
+      "type": "entrada",
+      "date": "2222-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "2eaa",
+      "description": "2",
+      "value": -55,
+      "date": "2220-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "dd47",
+      "description": "Teste",
+      "value": -2000,
+      "date": "2500-01-01T00:00:00.000Z"
+    }
+  ]
+}
