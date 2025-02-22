@@ -1,6 +1,7 @@
 import { ReactNode, useEffect, useState, useCallback } from 'react'
 import { api } from '../lib/axios'
 import { createContext } from 'use-context-selector'
+
 interface Transaction {
   id: number
   description: string
@@ -20,7 +21,7 @@ interface DeleteTransaction {
 
 interface TransactionsContextType {
   transactions: Transaction[]
-  fetchTransactions: (query?: string) => Promise<void>
+  fetchTransactions: (query?: string, field?: "description" | "value" | "date") => Promise<void>;
   createTransaction: (data: CreateTransaction) => Promise<void>
   deleteTransaction: (data: DeleteTransaction) => Promise<void>
 }
@@ -34,27 +35,51 @@ export const TransactionsContext = createContext({} as TransactionsContextType)
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([])
 
-  const fetchTransactions = useCallback(async (query?: string) => {
-    console.log('query', query);
-    const response = await api.get('transactions', {
+  const fetchTransactions = useCallback(async (query?: string, field: "description" | "value" | "date" = "description") => {
+ 
+    let formattedQuery = query;
+  
+    if (field === "date" && query) {
+      const [day, month, year] = query.split("/");
+      const targetDate = new Date(`${year}-${month}-${day}T00:00:00.000Z`).toISOString().split("T")[0];
+  
+      const response = await api.get("transactions");
+  
+      const filteredTransactions = response.data.filter((transaction: Transaction) => {
+        const transactionDate = new Date(transaction.date).toISOString().split("T")[0];
+        return transactionDate === targetDate;
+      });
+   
+      setTransactions(filteredTransactions);
+      return;
+    }
+  
+    const response = await api.get("transactions", {
       params: {
-        _sort: 'date',
-        _order: 'desc',
-        q: query,
+        _sort: field,
+        _order: "desc",
+        [field]: formattedQuery,
       },
-    })
-
-    setTransactions(response.data)
-  }, [])
+    });
+  
+    setTransactions(response.data);
+  }, []);
+  
 
   const createTransaction = useCallback(
     async (data: CreateTransaction) => {
       const { description, value, date } = data
 
+      const [year, month, day] = date.toISOString().split("T")[0].split("-").map(Number);
+
+      const now = new Date();
+    
+      const formattedDate = new Date(year, month - 1, day, now.getHours(), now.getMinutes(), now.getSeconds(), now.getMilliseconds()).toISOString(); 
+
       const response = await api.post('transactions', {
         description,
         value,
-        date,
+        date: formattedDate,
       })
 
       setTransactions((state) => [response.data, ...state])
