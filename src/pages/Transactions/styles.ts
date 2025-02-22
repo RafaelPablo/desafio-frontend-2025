@@ -56,6 +56,23 @@ export const DeleteTransactionButton = styled.button`
     transition: background-color 0.2s;
   }
 `
+export const OrderDescriptionTransactionButton = styled.button`
+  height: 25px;
+  border: 0;
+  background: ${(props) => props.theme['gray-700']};
+  color: ${(props) => props.theme.white};
+  font-weight: bold;
+  padding: 0 1.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: -1rem;
+
+  &:hover {
+    background: ${(props) => props.theme['gray-500']};
+    transition: background-color 0.2s;
+  }
+`
+
 export const OrderTransactionButton = styled.button`
   height: 25px;
   border: 0;
@@ -72,7 +89,7 @@ export const OrderTransactionButton = styled.button`
   }
 `
 
-export const OrderDescriptionTransactionButton = styled.button`
+export const FilterTransactionButton = styled.button`
   height: 25px;
   border: 0;
   background: ${(props) => props.theme['gray-700']};
@@ -81,7 +98,6 @@ export const OrderDescriptionTransactionButton = styled.button`
   padding: 0 1.25rem;
   border-radius: 6px;
   cursor: pointer;
-  margin-left: -1rem;
 
   &:hover {
     background: ${(props) => props.theme['gray-500']};

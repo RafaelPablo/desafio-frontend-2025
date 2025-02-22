@@ -13,7 +13,8 @@ import {
   TransactionsTable,
   DeleteTransactionButton,
   OrderDescriptionTransactionButton,
-  OrderTransactionButton
+  OrderTransactionButton,
+  FilterTransactionButton
 } from './styles'
 
 interface Transaction {
@@ -42,12 +43,27 @@ const sortReducer = (state: SortState, action: SortAction): SortState => {
   return { key: action.key, direction: "asc" };
 };
 
+type FilterState = "all" | "income" | "outcome";
+
+const filterReducer = (state: FilterState): FilterState => {
+  if (state === "all") return "income";
+  if (state === "income") return "outcome";
+  return "all";
+};
+
 export function Transactions() {
   const transactions = useContextSelector(TransactionsContext, (context) => context.transactions);
 
   const [sortConfig, dispatch] = useReducer(sortReducer, { key: "date", direction: "asc" });
+  const [filterType, dispatchFilter] = useReducer(filterReducer, "all");
 
-  const sortedTransactions = [...transactions].sort((a, b) => {
+  const filteredTransactions = transactions.filter((transaction) => {
+    if (filterType === "income") return transaction.value > 0;
+    if (filterType === "outcome") return transaction.value < 0;
+    return true;
+  });
+
+  const sortedTransactions = [...filteredTransactions].sort((a, b) => {
     const key = sortConfig.key;
     const valueA = a[key];
     const valueB = b[key];
@@ -101,7 +117,9 @@ export function Transactions() {
               </OrderTransactionButton>
             </td>
             <td>
-              <OrderTransactionButton>Ações</OrderTransactionButton>
+              <FilterTransactionButton onClick={() => dispatchFilter()}>
+                {filterType === "all" ? "Todos" : filterType === "income" ? "Entradas" : "Saídas"}
+              </FilterTransactionButton>
             </td>
           </tr>
           </thead>
