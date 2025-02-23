@@ -1,50 +1,92 @@
-# React + TypeScript + Vite
+# 📊 Gerenciamento de Transações Financeiras
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um software para gerenciamento de transações financeiras, permitindo registrar entradas e saídas, visualizar um resumo financeiro e ordenar ou filtrar os dados conforme necessário.
 
-Currently, two official plugins are available:
+![Dashboard de Transações](/desafio-frontend-2025/docs/26.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Funcionalidades Principais
 
-## Expanding the ESLint configuration
+### 🔹 Listagem de Transações
+- As transações são exibidas em uma tabela contendo:
+  - **Descrição**
+  - **Valor** (valores negativos representam saídas, enquanto positivos representam entradas)
+  - **Data**
+  - **Tipo** (Entrada ou Saída)
+- Possibilidade de **ordenar** por qualquer uma das colunas clicando sobre o cabeçalho.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![Tabela de Transações](/desafio-frontend-2025/docs/17.png)
 
-- Configure the top-level `parserOptions` property like this:
+### 🔹 Sumário Financeiro
+- Exibe um resumo com a soma do total de **Entradas, Saídas e Saldo**.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+![Resumo Financeiro](/desafio-frontend-2025/docs/6.png)
+
+### 🔹 Cadastro de Novas Transações
+- Botão **"Nova Transação"** permite ao usuário inserir Transações:
+
+![Botão de Nova Transação](/desafio-frontend-2025/docs/3.png)
+
+- No modal **"Nova Transação"** é possível informar os seguintes campos:
+  - **Descrição da transação**
+  - **Valor** (positivo para entrada, negativo para saída)
+  - **Data da transação**
+
+![Modal de Nova Transação](/desafio-frontend-2025/docs/4.png)
+
+### 🔹 Exclusão de Transações
+- Cada linha da tabela contém uma opção para excluir a transação.
+
+![Botão de Exclusão](/desafio-frontend-2025/docs/21.png)
+
+- Um modal de **confirmação de exclusão** é exibido antes da remoção definitiva.
+
+![Modal de Exclusão](/desafio-frontend-2025/docs/20.png)
+
+### 🔹 Filtro de Transações
+- Campo de busca permite filtrar os registros por:
+  - **Descrição**
+  - **Valor**
+  - **Data**
+- O usuário pode alternar o critério de busca selecionando uma opção.
+
+![Filtro de Busca](/desafio-frontend-2025/docs/7.png)
+
+### 🔹 Temas (Claro/Escuro)
+- O usuário pode alternar entre os temas **claro** e **escuro** pelo botão no canto superior direito.
+- O tema escolhido é aplicado em toda a interface da aplicação.
+
+![Alternância de Tema](/desafio-frontend-2025/docs/2.png)
+
+## 🚀 Como Instalar e inicializar o Front e o 'Back'
+
+### ✅ Instalação
+Certifique-se de ter o Node.js instalado e execute os seguintes comandos:
+
+```bash
+# Clone o repositório
+git clone https://github.com/RafaelPablo/desafio-frontend-2025.git
+
+# Acesse a pasta do projeto
+cd desafio-frontend-2025
+
+# Instale as dependências
+npm i
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### ▶️ Executando o Projeto
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npx json-server server.json -p 3333
+npm run dev
 ```
+A aplicação estará disponível em `http://localhost:3002`.
+
+<!-- ## 🧪 Testes
+A aplicação possui testes unitários cobrindo as principais funcionalidades. Para executá-los:
+
+```bash
+npm test
+``` -->
+
+## 📜 Licença
+Este projeto está licenciado sob a [MIT License](./LICENSE).
