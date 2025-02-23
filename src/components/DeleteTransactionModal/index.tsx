@@ -58,9 +58,6 @@ export function DeleteTransactionModal({ transactionId }: DeleteTransactionModal
           <button type="button" onClick={() => handleDeleteTransaction({ transactionId })}>
             Excluir
           </button>
-          {/* <button type="button" onClick={onClose}>
-            Cancelar
-          </button> */}
         </form>
         
       </Content>

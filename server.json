@@ -1,110 +1,46 @@
 {
   "transactions": [
     {
-      "description": "Night out",
-      "value": 200,
-      "type": "outcome",
-      "date": "2023-03-25T10:39:09.291Z",
-      "id": "6"
+      "id": "c82e",
+      "description": "Salário",
+      "value": 3200,
+      "date": "1999-01-01T13:16:41.919Z"
     },
     {
-      "id": "a309",
-      "description": "teste",
-      "value": 99,
-      "type": "outcome",
-      "date": "2025-02-21T16:36:53.203Z"
-    },
-    {
-      "id": "fa3a",
-      "description": "teste",
-      "value": 25,
-      "type": "saida",
-      "date": "2025-02-21T17:04:15.394Z"
-    },
-    {
-      "id": "a9fa",
-      "description": "ajuste de contas",
-      "value": 2096,
-      "type": "entrada",
-      "date": "2025-02-21T17:07:34.968Z"
-    },
-    {
-      "id": "243b",
-      "description": "teste",
-      "value": 25,
-      "type": "saida",
-      "date": "2220-01-01T00:00:00.000Z"
-    },
-    {
-      "id": "2b9c",
-      "description": "Mote",
-      "value": 100,
-      "type": "saida",
-      "date": "2025-02-21T00:00:00.000Z"
-    },
-    {
-      "id": "9f75",
-      "description": "mas que coisa",
-      "value": 5,
-      "type": "entrada",
-      "date": "2025-02-21T00:00:00.000Z"
-    },
-    {
-      "id": "d167",
-      "description": "teste",
-      "value": -21,
-      "type": "entrada",
-      "date": "2220-01-01T00:00:00.000Z"
-    },
-    {
-      "id": "b60b",
-      "description": "111",
-      "value": -21,
-      "type": "entrada",
-      "date": "2230-01-01T00:00:00.000Z"
-    },
-    {
-      "id": "c055",
-      "description": "2",
+      "id": "af56",
+      "description": "Gás",
       "value": -15,
-      "type": "entrada",
-      "date": "2222-01-01T00:00:00.000Z"
+      "date": "1999-01-05T13:16:56.564Z"
     },
     {
-      "id": "2eaa",
-      "description": "2",
-      "value": -55,
-      "date": "2220-01-01T00:00:00.000Z"
+      "id": "806c",
+      "description": "Energia",
+      "value": -199,
+      "date": "1999-01-08T13:17:48.487Z"
     },
     {
-      "id": "dd47",
-      "description": "Teste",
-      "value": -2000,
-      "date": "2500-01-01T00:00:00.000Z"
+      "id": "a954",
+      "description": "Inglês",
+      "value": -150,
+      "date": "1999-01-15T13:18:15.098Z"
     },
     {
-      "id": "8d6a",
-      "description": "One more",
-      "value": 250,
-      "date": "2021-01-01T00:00:00.000Z"
+      "id": "18fd",
+      "description": "Parcela moto",
+      "value": -255,
+      "date": "1999-01-12T13:18:37.419Z"
     },
     {
-      "id": "019f",
-      "description": "Vamos ver",
-      "value": 1,
-      "date": "2001-01-01T00:00:00.000Z"
+      "id": "20d7",
+      "description": "Faculdade",
+      "value": -1125,
+      "date": "1999-01-25T13:19:14.861Z"
     },
     {
-      "id": "2839",
-      "description": "Mas será que agora vai",
-      "value": 2500,
-      "date": "2000-12-31T15:04:37.379Z"
-    },
-    {
-      "id": "4152",
-      "description": "+ uma tentativa de data common",
-      "value": 25,
-      "date": "2001-01-01T15:10:42.905Z"
+      "id": "f7c7",
+      "description": "Bicos",
+      "value": 205,
+      "date": "1999-01-25T13:19:35.013Z"
     }
   ]
 }
