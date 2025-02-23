@@ -19,6 +19,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
+    "react-number-format": "^5.4.3",
     "scheduler": "^0.25.0",
     "styled-components": "^6.1.15",
     "use-context-selector": "^2.0.0",

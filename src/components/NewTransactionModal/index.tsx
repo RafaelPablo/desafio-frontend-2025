@@ -6,10 +6,11 @@ import {
 } from './styles'
 import { X } from 'phosphor-react'
 import * as z from 'zod'
-import { useForm } from 'react-hook-form'
+import { useForm, Controller } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useContextSelector } from 'use-context-selector'
 import { TransactionsContext } from '../../contexts/TransactionsContext'
+import { NumericFormat } from 'react-number-format'
 
 const newTransactionFormSchema = z.object({
   description: z.string()
@@ -18,11 +19,17 @@ const newTransactionFormSchema = z.object({
     .max(100, 'A descrição deve ter no máximo 50 caracteres'),
   
   value: z.preprocess(
-    (val) => Number(val),
+    (val) => {
+      if (typeof val === "string") {
+        const numericValue = parseFloat(val.replace(/[^0-9,-]/g, "").replace(",", "."));
+        return isNaN(numericValue) ? NaN : numericValue;
+      }
+      return val;
+    },
     z.number()
-      .refine((val) => val !== 0, 'O valor não pode ser zero')
-      .refine((val) => !isNaN(val), 'O valor deve ser um número')
-  ),
+      .refine((val) => val !== 0, "O valor não pode ser zero")
+      .refine((val) => !isNaN(val), "O valor deve ser um número válido")
+  ),    
 
   date: z.preprocess(
     (val) => new Date(val as string),
@@ -45,6 +52,7 @@ export function NewTransactionModal() {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors, isSubmitting },
     reset,
   } = useForm<NewTransactionsFormInputs>({
@@ -84,13 +92,28 @@ export function NewTransactionModal() {
             {...register('description')}
           />
           {errors.description && <span>{errors.description.message}</span>}
-          <input
-            type="number"
-            placeholder="Valor"
-            required
-            {...register('value')}
+          
+          <Controller
+            control={control}
+            name="value"
+            render={({ field }) => (
+              <NumericFormat
+                {...field}
+                thousandSeparator="."
+                decimalSeparator=","
+                prefix="R$ "
+                decimalScale={2}
+                fixedDecimalScale
+                allowNegative={false}
+                placeholder="R$ 0,00"
+                onValueChange={(values) => {
+                  field.onChange(values.floatValue || 0);
+                }}
+              />
+            )}
           />
           {errors.value && <span>{errors.value.message}</span>}
+
           <input
             type="date"
             placeholder="Data"
@@ -98,6 +121,7 @@ export function NewTransactionModal() {
             {...register('date')}
           />
           {errors.date && <span>{errors.date.message}</span>}
+
           <button type="submit" disabled={isSubmitting}>
             Salvar
           </button>
