@@ -1,6 +1,8 @@
-# 📊 Gerenciamento de Transações Financeiras
+# 📊 Documentação do Software de Gerenciamento de Transações Financeiras
 
-Este é um software para gerenciamento de transações financeiras, permitindo registrar entradas e saídas, visualizar um resumo financeiro e ordenar ou filtrar os dados conforme necessário.
+Este software de gerenciamento de transações financeiras oferece uma interface dinâmica que permite aos usuários interagir facilmente com seu histórico financeiro. Com ele, é possível registrar entradas e saídas, visualizar um resumo consolidado do saldo, além de ordenar e filtrar os dados conforme necessário.
+
+A plataforma conta com funcionalidades intuitivas, como filtros personalizados, ordenação de colunas e um sumário detalhado das transações. Além disso, inclui um modo de troca de temas entre claro e escuro, proporcionando uma experiência personalizada para o usuário.
 
 ![Dashboard de Transações](/desafio-frontend-2025/docs/26.png)
 
@@ -87,6 +89,21 @@ A aplicação possui testes unitários cobrindo as principais funcionalidades. P
 ```bash
 npm test
 ``` -->
+
+## 🚀 Tecnologias Utilizadas
+
+As principais tecnologias usadas no projeto são:
+
+- ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white) `5.3.3`
+- ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white) `18.2.0`
+- ![Vite](https://img.shields.io/badge/-Vite-646CFF?logo=vite&logoColor=white) `5.0.0`
+- ![Styled Components](https://img.shields.io/badge/-Styled%20Components-DB7093?logo=styled-components&logoColor=white) `6.1.8`
+- ![Radix UI](https://img.shields.io/badge/-Radix%20UI-000000?logo=radixui&logoColor=white) `1.1.0`
+- ![Axios](https://img.shields.io/badge/-Axios-5A29E4?logo=axios&logoColor=white) `1.6.8`
+- ![Zod](https://img.shields.io/badge/-Zod-9B33FA?logo=zod&logoColor=white) `3.22.4`
+- ![React Hook Form](https://img.shields.io/badge/-React%20Hook%20Form-EC5990?logo=react-hook-form&logoColor=white) `7.46.0`
+- ![Vitest](https://img.shields.io/badge/-Vitest-FFC72C?logo=vitest&logoColor=white) `0.34.6`
+- ![JSON Server](https://img.shields.io/badge/-JSON%20Server-000000?logo=json&logoColor=white) `0.17.4`
 
 ## 📜 Licença
 Este projeto está licenciado sob a [MIT License](./LICENSE).
