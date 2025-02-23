@@ -49,11 +49,9 @@ export const SearchRadios = styled(RadioGroup.Root)`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 0.75rem;
-  border: 1px solid ${(props) => props.theme['green-500']};
-  border-radius: 6px;
+  border: none;
   background: ${(props) => props.theme['gray-800']}; 
-  width: 150px; 
+  width: 130px; 
 `;
 
 export const RadioButton = styled(RadioGroup.Item)`
@@ -61,10 +59,10 @@ export const RadioButton = styled(RadioGroup.Item)`
   align-items: center;
   gap: 0.1rem;
   cursor: pointer;
-  border: none;
   background: transparent;
   color: ${(props) => props.theme['green-300']};
   font-size: 0.875rem;
+  height: 30px;
 
   &:before {
     content: "";
