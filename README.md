@@ -4,7 +4,7 @@ Este software de gerenciamento de transações financeiras oferece uma interface
 
 A plataforma conta com funcionalidades intuitivas, como filtros personalizados, ordenação de colunas e um sumário detalhado das transações. Além disso, inclui um modo de troca de temas entre claro e escuro, proporcionando uma experiência personalizada para o usuário.
 
-![Dashboard de Transações](/desafio-frontend-2025/docs/26.png)
+![Aplicação](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/26.png)
 
 ## 📌 Funcionalidades Principais
 
@@ -16,33 +16,33 @@ A plataforma conta com funcionalidades intuitivas, como filtros personalizados, 
   - **Tipo** (Entrada ou Saída)
 - Possibilidade de **ordenar** por qualquer uma das colunas clicando sobre o cabeçalho.
 
-![Tabela de Transações](/desafio-frontend-2025/docs/17.png)
+![Tabela de Transações](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/17.png)
 
 ### 🔹 Sumário Financeiro
 - Exibe um resumo com a soma do total de **Entradas, Saídas e Saldo**.
 
-![Resumo Financeiro](/desafio-frontend-2025/docs/6.png)
+![Resumo Financeiro](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/6.png)
 
 ### 🔹 Cadastro de Novas Transações
 - Botão **"Nova Transação"** permite ao usuário inserir Transações:
 
-![Botão de Nova Transação](/desafio-frontend-2025/docs/3.png)
+![Botão de Nova Transação](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/3.png)
 
 - No modal **"Nova Transação"** é possível informar os seguintes campos:
   - **Descrição da transação**
   - **Valor** (positivo para entrada, negativo para saída)
   - **Data da transação**
 
-![Modal de Nova Transação](/desafio-frontend-2025/docs/4.png)
+![Modal de Nova Transação](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/4.png)
 
 ### 🔹 Exclusão de Transações
 - Cada linha da tabela contém uma opção para excluir a transação.
 
-![Botão de Exclusão](/desafio-frontend-2025/docs/21.png)
+![Botão de Exclusão](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/21.png)
 
 - Um modal de **confirmação de exclusão** é exibido antes da remoção definitiva.
 
-![Modal de Exclusão](/desafio-frontend-2025/docs/20.png)
+![Modal de Exclusão](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/20.png)
 
 ### 🔹 Filtro de Transações
 - Campo de busca permite filtrar os registros por:
@@ -51,13 +51,13 @@ A plataforma conta com funcionalidades intuitivas, como filtros personalizados, 
   - **Data**
 - O usuário pode alternar o critério de busca selecionando uma opção.
 
-![Filtro de Busca](/desafio-frontend-2025/docs/7.png)
+![Filtro de Busca](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/7.png)
 
 ### 🔹 Temas (Claro/Escuro)
 - O usuário pode alternar entre os temas **claro** e **escuro** pelo botão no canto superior direito.
 - O tema escolhido é aplicado em toda a interface da aplicação.
 
-![Alternância de Tema](/desafio-frontend-2025/docs/2.png)
+![Alternância de Tema](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/2.png)
 
 ## 🚀 Como Instalar e inicializar o Front e o 'Back'
 
