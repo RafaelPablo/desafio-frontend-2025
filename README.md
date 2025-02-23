@@ -5,7 +5,7 @@ Este software de gerenciamento de transações financeiras oferece uma interface
 A plataforma conta com funcionalidades intuitivas, como filtros personalizados, ordenação de colunas e um sumário detalhado das transações. Além disso, inclui um modo de troca de temas entre claro e escuro, proporcionando uma experiência personalizada para o usuário.
 
 ![Aplicação](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/26.png)
-
+ 
 ## 📌 Funcionalidades Principais
 
 ### 🔹 Listagem de Transações
@@ -36,10 +36,20 @@ A plataforma conta com funcionalidades intuitivas, como filtros personalizados, 
 
 ![Botão de Nova Transação](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/3.png)
 
-- No modal **"Nova Transação"** é possível informar os seguintes campos:
-  - **Descrição da transação**
-  - **Valor** (positivo para entrada, negativo para saída)
-  - **Data da transação**
+- No modal **"Nova Transação"** é possível informar os seguintes campos que possuem **validações específicas** para garantir que os dados inseridos sejam corretos:
+- **Descrição da transação**  
+  - Deve ter **pelo menos 3 caracteres**  
+  - É um campo **obrigatório**  
+  - Deve ter **no máximo 50 caracteres**  
+
+- **Valor**  
+  - Não pode ser **zero**  
+  - Deve ser **um número válido**  
+  - Aceita valores **positivos** (entrada) e **negativos** (saída)  
+
+- **Data da transação**  
+  - Deve ser uma **data válida**  
+  - **Não pode ser no futuro**  
 
 ![Modal de Nova Transação](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/4.png)
 
