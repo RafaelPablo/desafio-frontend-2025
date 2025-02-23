@@ -13,10 +13,18 @@ A plataforma conta com funcionalidades intuitivas, como filtros personalizados, 
   - **Descrição**
   - **Valor** (valores negativos representam saídas, enquanto positivos representam entradas)
   - **Data**
-  - **Tipo** (Entrada ou Saída)
-- Possibilidade de **ordenar** por qualquer uma das colunas clicando sobre o cabeçalho.
+  - **Tipo** (Entrada ou Saída - representado pela cor do valor e sinal)
+- Possibilidade de **ordenar** os dados clicando sobre os cabeçalhos das colunas **Descrição, Valor e Data**.
 
-![Tabela de Transações](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/17.png)
+![Ordenação Tabela](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/17.png)
+
+- **Filtro de Tipo**:  
+  O usuário pode selecionar um filtro para visualizar transações específicas:
+  - **Todas**: Exibe tanto entradas quanto saídas.  
+  - **Entradas**: Mostra apenas transações de entrada (valores positivos).  
+  - **Saídas**: Exibe somente transações de saída (valores negativos).  
+
+![Filtros Tabela](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/25.png)
 
 ### 🔹 Sumário Financeiro
 - Exibe um resumo com a soma do total de **Entradas, Saídas e Saldo**.
@@ -24,7 +32,7 @@ A plataforma conta com funcionalidades intuitivas, como filtros personalizados, 
 ![Resumo Financeiro](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/6.png)
 
 ### 🔹 Cadastro de Novas Transações
-- Botão **"Nova Transação"** permite ao usuário inserir Transações:
+- Botão **"Nova Transação"** (no canto superior direito) permite ao usuário inserir Transações:
 
 ![Botão de Nova Transação](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/3.png)
 
@@ -54,7 +62,7 @@ A plataforma conta com funcionalidades intuitivas, como filtros personalizados, 
 ![Filtro de Busca](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/7.png)
 
 ### 🔹 Temas (Claro/Escuro)
-- O usuário pode alternar entre os temas **claro** e **escuro** pelo botão no canto superior direito.
+- O usuário pode alternar entre os temas **claro** e **escuro** pelo botão (no canto superior esquerdo).
 - O tema escolhido é aplicado em toda a interface da aplicação.
 
 ![Alternância de Tema](https://raw.githubusercontent.com/RafaelPablo/desafio-frontend-2025/main/docs/2.png)
