@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState, useCallback } from 'react'
-import { api } from '../lib/axios'
+import { api } from '../services/api'
 import { createContext } from 'use-context-selector'
 
 interface Transaction {
