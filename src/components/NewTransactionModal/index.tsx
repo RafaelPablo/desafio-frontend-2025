@@ -39,14 +39,21 @@ const newTransactionFormSchema = z.object({
   )
 })
 
-type NewTransactionsFormInputs = z.infer<typeof newTransactionFormSchema>
+export type NewTransactionsFormInputs = z.infer<typeof newTransactionFormSchema>
+
+export async function handleCreateNewTransaction(
+  data: NewTransactionsFormInputs,
+  createTransaction: (data: NewTransactionsFormInputs) => Promise<void>,
+  reset: () => void
+) {
+  await createTransaction(data)
+  reset()
+}
 
 export function NewTransactionModal() {
   const createTransaction = useContextSelector(
     TransactionsContext,
-    (context) => {
-      return context.createTransaction
-    },
+    (context) => context.createTransaction
   )
 
   const {
@@ -58,18 +65,6 @@ export function NewTransactionModal() {
   } = useForm<NewTransactionsFormInputs>({
     resolver: zodResolver(newTransactionFormSchema),
   })
-
-  async function handleCreateNewTransaction(data: NewTransactionsFormInputs) {
-    let { description, value, date } = data
-
-    await createTransaction({
-      description,
-      value,
-      date
-    })
-
-    reset()
-  }
 
   return (
     <Dialog.Portal>
@@ -84,7 +79,7 @@ export function NewTransactionModal() {
         
         <Dialog.Description></Dialog.Description>
 
-        <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
+        <form onSubmit={handleSubmit((data) => handleCreateNewTransaction(data, createTransaction, reset))}>
           <input
             type="text"
             placeholder="Descrição"
