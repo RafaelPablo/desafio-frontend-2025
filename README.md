@@ -101,12 +101,12 @@ npm run dev
 ```
 A aplicação estará disponível em `http://localhost:3002`.
 
-<!-- ## 🧪 Testes
+## 🧪 Testes
 A aplicação possui testes unitários cobrindo as principais funcionalidades. Para executá-los:
 
 ```bash
-npm test
-``` -->
+npm run test
+```
 
 ## 🚀 Tecnologias Utilizadas
 

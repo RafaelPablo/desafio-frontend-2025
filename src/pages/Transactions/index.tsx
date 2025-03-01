@@ -16,79 +16,17 @@ import {
   OrderTransactionButton,
   FilterTransactionButton
 } from './styles'
-
-interface Transaction {
-  id: number;
-  description: string;
-  value: number;
-  date: Date;
-}
-
-type SortKey = keyof Pick<Transaction, "description" | "value" | "date">;
-
-interface SortState {
-  key: SortKey;
-  direction: "asc" | "desc";
-}
-
-interface SortAction {
-  type: "SET_SORT";
-  key: SortKey;
-}
-
-const sortReducer = (state: SortState, action: SortAction): SortState => {
-  if (state.key === action.key) {
-    return { key: action.key, direction: state.direction === "asc" ? "desc" : "asc" };
-  }
-  return { key: action.key, direction: "asc" };
-};
-
-type FilterState = "all" | "income" | "outcome";
-
-const filterReducer = (state: FilterState): FilterState => {
-  if (state === "all") return "income";
-  if (state === "income") return "outcome";
-  return "all";
-};
+import { sortReducer, sortTransactions } from '../../utils/sorting'
+import { filterReducer, filterTransactions } from '../../utils/filters'
 
 export function Transactions() {
   const transactions = useContextSelector(TransactionsContext, (context) => context.transactions);
 
   const [sortConfig, dispatch] = useReducer(sortReducer, { key: "date", direction: "asc" });
+  const sortedTransactions = sortTransactions(transactions, sortConfig);
+
   const [filterType, dispatchFilter] = useReducer(filterReducer, "all");
-
-  const filteredTransactions = transactions.filter((transaction) => {
-    if (filterType === "income") return transaction.value > 0;
-    if (filterType === "outcome") return transaction.value < 0;
-    return true;
-  });
-
-  const sortedTransactions = [...filteredTransactions].sort((a, b) => {
-    const key = sortConfig.key;
-    const valueA = a[key];
-    const valueB = b[key];
-  
-    if (key === "description") {
-      return sortConfig.direction === "asc"
-        ? (valueA as string).localeCompare(valueB as string)
-        : (valueB as string).localeCompare(valueA as string);
-    }
-  
-    if (key === "value") {
-      return sortConfig.direction === "asc"
-        ? (valueA as number) - (valueB as number)
-        : (valueB as number) - (valueA as number);
-    }
-
-    if (key === "date") {
-      return sortConfig.direction === "asc"
-      ? (valueA as string).localeCompare(valueB as string)
-      : (valueB as string).localeCompare(valueA as string);
-    }
-  
-    return 0;
-  });
-  
+  const sortedfiltedTransactions = filterTransactions(sortedTransactions, filterType);
 
   return (
     <div>
@@ -124,7 +62,7 @@ export function Transactions() {
           </tr>
           </thead>
           <tbody>
-            {sortedTransactions.map((transaction) => {
+            {sortedfiltedTransactions.map((transaction) => {
               return (
                 <tr key={transaction.id}>
                   <td width="50%">{transaction.description}</td>
